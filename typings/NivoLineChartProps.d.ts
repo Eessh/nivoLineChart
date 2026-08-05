@@ -12,6 +12,24 @@ export type ThemeTypeEnum = "default" | "specify";
 
 export type EnableSlicesEnum = "x" | "y" | "no";
 
+export type AreaBlendModeEnum =
+    | "normal"
+    | "multiply"
+    | "screen"
+    | "overlay"
+    | "darken"
+    | "lighten"
+    | "color_dodge"
+    | "color_burn"
+    | "hard_light"
+    | "soft_light"
+    | "difference"
+    | "exclusion"
+    | "hue"
+    | "saturation"
+    | "color"
+    | "luminosity";
+
 export type AxisTopLegendPositionEnum = "start" | "middle" | "end";
 
 export type AxisRightLegendPositionEnum = "start" | "middle" | "end";
@@ -69,6 +87,10 @@ export interface NivoLineChartContainerProps {
     enableGridX: boolean;
     enableGridY: boolean;
     enableSlices: EnableSlicesEnum;
+    enableArea: boolean;
+    areaOpacity: string;
+    areaBlendMode: AreaBlendModeEnum;
+    enablePoints: boolean;
     enablePointLabel: boolean;
     pointLabel?: DynamicValue<string>;
     pointLabelYOffset: string;
@@ -179,6 +201,10 @@ export interface NivoLineChartPreviewProps {
     enableGridX: boolean;
     enableGridY: boolean;
     enableSlices: EnableSlicesEnum;
+    enableArea: boolean;
+    areaOpacity: string;
+    areaBlendMode: AreaBlendModeEnum;
+    enablePoints: boolean;
     enablePointLabel: boolean;
     pointLabel: string;
     pointLabelYOffset: string;

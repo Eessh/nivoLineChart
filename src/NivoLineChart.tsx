@@ -148,6 +148,22 @@ export function NivoLineChart(props: NivoLineChartContainerProps): ReactElement 
         };
     };
 
+    const getAreaBlendMode = (): string => {
+        if (props.areaBlendMode === "color_dodge") {
+            return "color-dodge";
+        }
+        if (props.areaBlendMode === "color_burn") {
+            return "color-burn";
+        }
+        if (props.areaBlendMode === "hard_light") {
+            return "hard-light";
+        }
+        if (props.areaBlendMode === "soft_light") {
+            return "soft-light";
+        }
+        return props.areaBlendMode;
+    };
+
     return (
         <NivoResponsiveLine
             data={parsedData}
@@ -167,6 +183,10 @@ export function NivoLineChart(props: NivoLineChartContainerProps): ReactElement 
             enableGridX={props.enableGridX}
             enableGridY={props.enableGridY}
             enableSlices={props.enableSlices === "no" ? false : props.enableSlices}
+            enableArea={props.enableArea}
+            areaOpacity={parseFloat(props.areaOpacity)}
+            areaBlendMode={getAreaBlendMode()}
+            enablePoints={props.enablePoints}
             enablePointLabel={props.enablePointLabel}
             pointLabel={props.pointLabel?.value}
             pointLabelYOffset={parseInt(props.pointLabelYOffset, 10)}

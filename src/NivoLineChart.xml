@@ -106,10 +106,52 @@
                 </enumerationValues>
             </property>
 
+            <!-- Enable Area -->
+            <property key="enableArea" type="boolean" defaultValue="false">
+                <caption>Enable Area</caption>
+                <description>Enable area under the line.</description>
+            </property>
+
+            <!-- Area Opacity -->
+            <property key="areaOpacity" type="string" defaultValue="0.1">
+                <caption>Area Opacity</caption>
+                <description>Opacity of the area under the line. (Float value between 0 and 1)</description>
+            </property>
+
+            <!-- Area Blend Mode -->
+            <property key="areaBlendMode" type="enumeration" defaultValue="normal">
+                <caption>Area Blend Mode</caption>
+                <description>Define CSS mix-blend-mode for areas.</description>
+                <enumerationValues>
+                    <enumerationValue key="normal">Normal</enumerationValue>
+                    <enumerationValue key="multiply">Multiply</enumerationValue>
+                    <enumerationValue key="screen">Screen</enumerationValue>
+                    <enumerationValue key="overlay">Overlay</enumerationValue>
+                    <enumerationValue key="darken">Darken</enumerationValue>
+                    <enumerationValue key="lighten">Lighten</enumerationValue>
+                    <enumerationValue key="color_dodge">Color Dodge</enumerationValue>
+                    <enumerationValue key="color_burn">Color Burn</enumerationValue>
+                    <enumerationValue key="hard_light">Hard Light</enumerationValue>
+                    <enumerationValue key="soft_light">Soft Light</enumerationValue>
+                    <enumerationValue key="difference">Difference</enumerationValue>
+                    <enumerationValue key="exclusion">Exclusion</enumerationValue>
+                    <enumerationValue key="hue">Hue</enumerationValue>
+                    <enumerationValue key="saturation">Saturation</enumerationValue>
+                    <enumerationValue key="color">Color</enumerationValue>
+                    <enumerationValue key="luminosity">Luminosity</enumerationValue>
+                </enumerationValues>
+            </property>
+
+            <!-- Enable Points -->
+            <property key="enablePoints" type="boolean" defaultValue="true">
+                <caption>Enable Points</caption>
+                <description>Enable points on the line chart.</description>
+            </property>
+
             <!-- Enable Point Label -->
             <property key="enablePointLabel" type="boolean" defaultValue="false">
                 <caption>Enable Point Label</caption>
-                <description>Horizontal lines for each tick in y-axis.</description>
+                <description>Enable point labels on the line chart.</description>
             </property>
 
             <!-- Point Label -->

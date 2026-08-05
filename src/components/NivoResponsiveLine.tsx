@@ -35,6 +35,10 @@ type NivoResponsiveLineProps = {
     enableTouchCrosshair?: boolean;
     pointSize?: number;
     pointBorderWidth?: number;
+    enablePoints?: boolean;
+    enableArea?: boolean;
+    areaOpacity?: number;
+    areaBlendMode?: string;
     enablePointLabel?: boolean;
     pointLabel?: string;
     pointLabelYOffset?: number;
@@ -398,6 +402,10 @@ const NivoResponsiveLine = (props: NivoResponsiveLineProps): ReactElement => {
             pointColor={{ theme: "background" }}
             pointBorderWidth={props.pointBorderWidth ?? DefaultProps.pointBorderWidth}
             pointBorderColor={{ from: "serieColor" }}
+            enableArea={props.enableArea ?? DefaultProps.enableArea}
+            areaOpacity={props.areaOpacity ?? DefaultProps.areaOpacity}
+            areaBlendMode={props.areaBlendMode ?? DefaultProps.areaBlendMode}
+            enablePoints={props.enablePoints ?? DefaultProps.enablePoints}
             enablePointLabel={props.enablePointLabel ?? DefaultProps.enablePointLabel}
             pointLabel={props.pointLabel ?? DefaultProps.pointLabel}
             pointLabelYOffset={props.pointLabelYOffset ?? DefaultProps.pointLabelYOffset}

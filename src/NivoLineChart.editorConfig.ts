@@ -121,15 +121,17 @@ export function getProperties(
     );
 
     // Properties
-    if (!_values.enablePointLabel) {
-        const propertiesPropGroup: PropertyGroup = defaultProperties.find(
-            propGroup => propGroup.caption === "Properties"
-        )!;
-        const propertiesPropsToRemove = ["pointLabel", "pointLabelYOffset"];
-        propertiesPropGroup.properties = propertiesPropGroup.properties!.filter(
-            prop => !propertiesPropsToRemove.includes(prop.key)
-        );
+    const propertiesPropGroup: PropertyGroup = defaultProperties.find(propGroup => propGroup.caption === "Properties")!;
+    const propertiesPropsToRemove: string[] = [];
+    if (!_values.enableArea) {
+        propertiesPropsToRemove.push("areaOpacity", "areaBlendMode");
     }
+    if (!_values.enablePointLabel) {
+        propertiesPropsToRemove.push("pointLabel", "pointLabelYOffset");
+    }
+    propertiesPropGroup.properties = propertiesPropGroup.properties!.filter(
+        prop => !propertiesPropsToRemove.includes(prop.key)
+    );
 
     // Axis Top
     if (!_values.enableAxisTop) {
